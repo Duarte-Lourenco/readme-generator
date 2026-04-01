@@ -11,15 +11,15 @@
   <meta property="og:description" content="Create professional README.md files for your GitHub projects in seconds. Free, no signup required." />
   <meta property="og:type" content="website" />
   <link rel="canonical" href="https://yourdomain.com/readme-generator" />
- 
+
   <!-- Google AdSense – replace ca-pub-XXXXXXXXXXXXXXXX with your publisher ID -->
   <!--
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   -->
- 
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
     :root {
       --bg: #0d1117;
       --surface: #161b22;
@@ -35,7 +35,7 @@
       --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     }
- 
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -44,7 +44,7 @@
       line-height: 1.6;
       min-height: 100vh;
     }
- 
+
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -53,21 +53,21 @@
       align-items: center;
       gap: 12px;
     }
- 
+
     header svg { flex-shrink: 0; }
- 
+
     header h1 {
       font-size: 18px;
       font-weight: 600;
       color: var(--text);
     }
- 
+
     header p {
       font-size: 12px;
       color: var(--text-muted);
       margin-top: 2px;
     }
- 
+
     /* ── AdSense top banner placeholder ── */
     .ad-banner {
       background: var(--surface2);
@@ -79,19 +79,19 @@
       /* Replace this div with the real AdSense snippet */
       display: none; /* hide until AdSense is active */
     }
- 
+
     .layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
       height: calc(100vh - 65px);
     }
- 
+
     @media (max-width: 900px) {
       .layout { grid-template-columns: 1fr; height: auto; }
       .preview-pane { border-top: 1px solid var(--border); }
     }
- 
+
     /* ── LEFT PANEL ── */
     .editor-pane {
       overflow-y: auto;
@@ -101,7 +101,7 @@
       flex-direction: column;
       gap: 20px;
     }
- 
+
     .section-title {
       font-size: 11px;
       font-weight: 600;
@@ -113,21 +113,21 @@
       align-items: center;
       gap: 6px;
     }
- 
+
     .section-title::after {
       content: '';
       flex: 1;
       height: 1px;
       background: var(--border);
     }
- 
+
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 16px;
     }
- 
+
     label {
       display: block;
       font-size: 12px;
@@ -136,9 +136,9 @@
       margin-bottom: 5px;
       margin-top: 12px;
     }
- 
+
     label:first-child { margin-top: 0; }
- 
+
     input[type="text"], textarea, select {
       width: 100%;
       background: var(--bg);
@@ -152,23 +152,23 @@
       transition: border-color .15s;
       resize: vertical;
     }
- 
+
     input[type="text"]:focus,
     textarea:focus,
     select:focus {
       border-color: var(--accent2);
       box-shadow: 0 0 0 3px rgba(31,111,235,.15);
     }
- 
+
     textarea { min-height: 70px; }
- 
+
     .badge-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 4px;
     }
- 
+
     .badge-check {
       display: flex;
       align-items: center;
@@ -182,21 +182,21 @@
       user-select: none;
       transition: border-color .15s, background .15s;
     }
- 
+
     .badge-check input { cursor: pointer; accent-color: var(--accent); }
- 
+
     .badge-check:hover {
       border-color: var(--accent2);
       background: var(--surface2);
     }
- 
+
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       gap: 6px;
       margin-top: 4px;
     }
- 
+
     .tech-chip {
       display: flex;
       align-items: center;
@@ -210,23 +210,23 @@
       user-select: none;
       transition: border-color .15s, background .15s;
     }
- 
+
     .tech-chip input { cursor: pointer; accent-color: var(--accent2); }
- 
+
     .tech-chip:hover {
       border-color: var(--accent2);
       background: var(--surface2);
     }
- 
+
     .dynamic-list { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
- 
+
     .dynamic-row {
       display: flex;
       gap: 6px;
     }
- 
+
     .dynamic-row input { flex: 1; }
- 
+
     .btn-remove {
       background: none;
       border: 1px solid var(--border);
@@ -237,9 +237,9 @@
       padding: 0 10px;
       transition: border-color .15s, color .15s;
     }
- 
+
     .btn-remove:hover { border-color: var(--danger); color: var(--danger); }
- 
+
     .btn-add {
       align-self: flex-start;
       background: none;
@@ -252,23 +252,23 @@
       margin-top: 4px;
       transition: border-color .15s, color .15s;
     }
- 
+
     .btn-add:hover { border-color: var(--accent2); color: var(--accent2); }
- 
+
     /* ── RIGHT PANEL ── */
     .preview-pane {
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
- 
+
     .preview-tabs {
       display: flex;
       border-bottom: 1px solid var(--border);
       background: var(--surface);
       padding: 0 16px;
     }
- 
+
     .tab-btn {
       background: none;
       border: none;
@@ -280,9 +280,9 @@
       position: relative;
       transition: color .15s;
     }
- 
+
     .tab-btn.active { color: var(--text); }
- 
+
     .tab-btn.active::after {
       content: '';
       position: absolute;
@@ -293,7 +293,7 @@
       background: var(--accent2);
       border-radius: 2px 2px 0 0;
     }
- 
+
     .preview-actions {
       display: flex;
       gap: 8px;
@@ -301,7 +301,7 @@
       border-bottom: 1px solid var(--border);
       background: var(--surface2);
     }
- 
+
     .btn-copy, .btn-download {
       display: flex;
       align-items: center;
@@ -314,30 +314,30 @@
       padding: 6px 14px;
       transition: background .15s, opacity .15s;
     }
- 
+
     .btn-copy {
       background: var(--accent);
       border: 1px solid rgba(240,246,252,.1);
       color: #fff;
     }
- 
+
     .btn-copy:hover { background: var(--accent-hover); }
- 
+
     .btn-download {
       background: var(--surface);
       border: 1px solid var(--border);
       color: var(--text);
     }
- 
+
     .btn-download:hover { background: var(--surface2); }
- 
+
     .btn-copy.copied { background: #1a7f37; }
- 
+
     .preview-content {
       flex: 1;
       overflow-y: auto;
     }
- 
+
     #markdown-raw {
       background: var(--bg);
       color: var(--text);
@@ -350,12 +350,12 @@
       display: none;
       height: 100%;
     }
- 
+
     #markdown-preview {
       padding: 24px 28px;
       display: block;
     }
- 
+
     /* GitHub-flavoured markdown preview */
     #markdown-preview h1 { font-size: 2em; border-bottom: 1px solid var(--border); padding-bottom: .3em; margin: 0 0 16px; }
     #markdown-preview h2 { font-size: 1.5em; border-bottom: 1px solid var(--border); padding-bottom: .3em; margin: 24px 0 16px; }
@@ -374,7 +374,7 @@
     #markdown-preview th { background: var(--surface2); }
     #markdown-preview blockquote { border-left: 4px solid var(--border); color: var(--text-muted); margin: 0 0 16px; padding: 0 16px; }
     #markdown-preview hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
- 
+
     footer {
       text-align: center;
       padding: 10px;
@@ -383,12 +383,39 @@
       border-top: 1px solid var(--border);
       background: var(--surface);
     }
- 
+
     footer a { color: var(--accent2); text-decoration: none; }
+
+    .kofi-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #FF5E5B;
+      border: none;
+      border-radius: 24px;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 18px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(255,94,91,.4);
+      transition: transform .15s, box-shadow .15s;
+      z-index: 999;
+    }
+
+    .kofi-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255,94,91,.5);
+    }
   </style>
 </head>
 <body>
- 
+
 <header>
   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="24" height="24" rx="6" fill="#238636"/>
@@ -399,36 +426,36 @@
     <p>Create professional README.md files for your projects — free, no signup</p>
   </div>
 </header>
- 
+
 <!-- AdSense top banner – uncomment and replace ID when approved -->
 <div class="ad-banner">Advertisement</div>
- 
+
 <div class="layout">
- 
+
   <!-- ════════════════════════════ LEFT PANEL ════════════════════════════ -->
   <div class="editor-pane" id="editor">
- 
+
     <!-- BASICS -->
     <div>
       <div class="section-title">Project basics</div>
       <div class="card">
         <label for="proj-name">Project Name *</label>
         <input type="text" id="proj-name" placeholder="my-awesome-project" />
- 
+
         <label for="proj-tagline">Tagline / Short Description *</label>
         <input type="text" id="proj-tagline" placeholder="A blazing-fast tool that does X" />
- 
+
         <label for="proj-desc">Full Description</label>
         <textarea id="proj-desc" placeholder="Explain what your project does, the problem it solves, and who it's for."></textarea>
- 
+
         <label for="proj-demo">Live Demo URL (optional)</label>
         <input type="text" id="proj-demo" placeholder="https://yourproject.com" />
- 
+
         <label for="proj-screenshot">Screenshot URL (optional)</label>
         <input type="text" id="proj-screenshot" placeholder="https://i.imgur.com/xxxxx.png" />
       </div>
     </div>
- 
+
     <!-- BADGES -->
     <div>
       <div class="section-title">Badges</div>
@@ -446,7 +473,7 @@
         <input type="text" id="badge-repo" placeholder="username/repository" />
       </div>
     </div>
- 
+
     <!-- TECH STACK -->
     <div>
       <div class="section-title">Tech Stack</div>
@@ -456,7 +483,7 @@
         </div>
       </div>
     </div>
- 
+
     <!-- FEATURES -->
     <div>
       <div class="section-title">Features</div>
@@ -465,7 +492,7 @@
         <button class="btn-add" onclick="addItem('features-list','feature','e.g. Zero-config setup')">+ Add feature</button>
       </div>
     </div>
- 
+
     <!-- INSTALLATION -->
     <div>
       <div class="section-title">Installation</div>
@@ -476,7 +503,7 @@
         <textarea id="install-cmd" style="min-height:50px;font-family:var(--mono)" placeholder="npm install my-awesome-project"></textarea>
       </div>
     </div>
- 
+
     <!-- USAGE -->
     <div>
       <div class="section-title">Usage</div>
@@ -485,14 +512,14 @@
         <textarea id="usage-code" style="min-height:90px;font-family:var(--mono)" placeholder="import { myLib } from 'my-awesome-project'&#10;myLib.doSomething()"></textarea>
       </div>
     </div>
- 
+
     <!-- CONTRIBUTING -->
     <div>
       <div class="section-title">Contributing & License</div>
       <div class="card">
         <label for="contrib-text">Contributing note</label>
         <input type="text" id="contrib-text" placeholder="Contributions are welcome! Please open an issue first." />
- 
+
         <label for="license-type">License</label>
         <select id="license-type">
           <option value="MIT">MIT</option>
@@ -503,14 +530,14 @@
           <option value="ISC">ISC</option>
           <option value="UNLICENSED">Unlicensed / Proprietary</option>
         </select>
- 
+
         <label for="author-name">Author / GitHub username</label>
         <input type="text" id="author-name" placeholder="your-github-username" />
       </div>
     </div>
- 
+
   </div><!-- /editor-pane -->
- 
+
   <!-- ════════════════════════════ RIGHT PANEL ════════════════════════════ -->
   <div class="preview-pane">
     <div class="preview-tabs">
@@ -532,13 +559,17 @@
       <pre id="markdown-raw"></pre>
     </div>
   </div>
- 
+
 </div><!-- /layout -->
- 
+
 <footer>
   Made with ❤️ — <a href="#">GitHub README Generator</a> · Free &amp; Open Source
 </footer>
- 
+
+<a class="kofi-btn" href="https://ko-fi.com/duartelourenco" target="_blank" rel="noopener">
+  ☕ Buy me a coffee
+</a>
+
 <script>
 /* ─────────────────────────── Tech stack data ─────────────────────────── */
 const TECHS = [
@@ -569,10 +600,10 @@ const TECHS = [
   { id:'aws',        label:'AWS',        color:'FF9900', logo:'amazonaws',     logoColor:'white' },
   { id:'gcp',        label:'GCP',        color:'4285F4', logo:'googlecloud',   logoColor:'white' },
 ];
- 
+
 /* ─────────────────────────── State ─────────────────────────── */
 let currentMarkdown = '';
- 
+
 /* ─────────────────────────── Build tech grid ─────────────────────────── */
 const techGrid = document.getElementById('tech-grid');
 TECHS.forEach(t => {
@@ -581,7 +612,7 @@ TECHS.forEach(t => {
   chip.innerHTML = `<input type="checkbox" data-tech="${t.id}" /> ${t.label}`;
   techGrid.appendChild(chip);
 });
- 
+
 /* ─────────────────────────── Dynamic lists ─────────────────────────── */
 function addItem(listId, prefix, placeholder) {
   const list = document.getElementById(listId);
@@ -602,23 +633,23 @@ function addItem(listId, prefix, placeholder) {
   input.focus();
   generate();
 }
- 
+
 // Seed with 3 feature rows
 ['', '', ''].forEach(() => addItem('features-list', 'feature', 'e.g. Blazing-fast performance'));
- 
+
 /* ─────────────────────────── Markdown generator ─────────────────────────── */
 function val(id) { return (document.getElementById(id)?.value || '').trim(); }
 function checked(id) { return document.getElementById(id)?.checked; }
- 
+
 function getSelectedTechs() {
   return TECHS.filter(t => document.querySelector(`input[data-tech="${t.id}"]`)?.checked);
 }
- 
+
 function getDynamicItems(listId) {
   return [...document.querySelectorAll(`#${listId} input[data-type]`)]
     .map(i => i.value.trim()).filter(Boolean);
 }
- 
+
 function generate() {
   const name        = val('proj-name')        || 'my-project';
   const tagline     = val('proj-tagline')     || 'A short description of your project';
@@ -634,13 +665,13 @@ function generate() {
   const author      = val('author-name');
   const techs       = getSelectedTechs();
   const features    = getDynamicItems('features-list');
- 
+
   let md = '';
- 
+
   /* Title + shields */
   md += `# ${name}\n\n`;
   md += `> ${tagline}\n\n`;
- 
+
   if (repo) {
     const shields = [];
     if (checked('badge-license'))    shields.push(`[![License](https://img.shields.io/github/license/${repo}?style=flat-square)](LICENSE)`);
@@ -654,21 +685,21 @@ function generate() {
   } else if (checked('badge-license')) {
     md += `![License](https://img.shields.io/badge/license-${encodeURIComponent(license)}-blue?style=flat-square)\n\n`;
   }
- 
+
   if (demo)  md += `**[Live Demo](${demo})**`;
   if (demo && repo) md += ` · `;
   if (repo)  md += `[Report Bug](https://github.com/${repo}/issues) · [Request Feature](https://github.com/${repo}/issues)`;
   if (demo || repo) md += '\n\n';
- 
+
   if (screenshot) {
     md += `---\n\n![Screenshot](${screenshot})\n\n`;
   }
- 
+
   /* About */
   if (desc) {
     md += `## About\n\n${desc}\n\n`;
   }
- 
+
   /* Tech stack */
   if (techs.length) {
     md += `## Built With\n\n`;
@@ -676,39 +707,39 @@ function generate() {
       `![${t.label}](https://img.shields.io/badge/${encodeURIComponent(t.label)}-${t.color}?style=for-the-badge&logo=${t.logo}&logoColor=${t.logoColor})`
     ).join(' ') + '\n\n';
   }
- 
+
   /* Features */
   if (features.length) {
     md += `## Features\n\n`;
     md += features.map(f => `- ✅ ${f}`).join('\n') + '\n\n';
   }
- 
+
   /* Getting Started */
   md += `## Getting Started\n\n`;
- 
+
   if (prereq) {
     md += `### Prerequisites\n\n\`\`\`bash\n${prereq}\n\`\`\`\n\n`;
   }
- 
+
   if (installCmd) {
     md += `### Installation\n\n\`\`\`bash\n${installCmd}\n\`\`\`\n\n`;
   }
- 
+
   if (usageCode) {
     md += `## Usage\n\n\`\`\`\n${usageCode}\n\`\`\`\n\n`;
   }
- 
+
   /* Contributing */
   md += `## Contributing\n\n${contrib}\n\n`;
   if (repo) {
     md += `1. Fork the repo\n2. Create your feature branch (\`git checkout -b feature/AmazingFeature\`)\n3. Commit your changes (\`git commit -m 'Add some AmazingFeature'\`)\n4. Push to the branch (\`git push origin feature/AmazingFeature\`)\n5. Open a Pull Request\n\n`;
   }
- 
+
   /* License */
   md += `## License\n\nDistributed under the **${license}** License.`;
   if (license === 'MIT') md += ' See `LICENSE` for more information.';
   md += '\n\n';
- 
+
   /* Author */
   if (author) {
     md += `## Author\n\n**${author}**`;
@@ -720,21 +751,21 @@ function generate() {
       md += `Project link: [https://github.com/${repo}](https://github.com/${repo})\n\n`;
     }
   }
- 
+
   /* Footer */
   md += `---\n\nMade with ❤️ by ${author || 'the author'}\n`;
- 
+
   currentMarkdown = md;
   renderPreview(md);
   document.getElementById('markdown-raw').textContent = md;
 }
- 
+
 /* ─────────────────────────── Markdown renderer ─────────────────────────── */
 function renderPreview(md) {
   const lines = md.split('\n');
   let html = '';
   let i = 0;
- 
+
   function inlineFormat(text) {
     return text
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" style="max-height:26px;vertical-align:middle;margin:2px 1px"/>')
@@ -743,10 +774,10 @@ function renderPreview(md) {
       .replace(/\*(.+?)\*/g, '<em>$1</em>')
       .replace(/`([^`]+)`/g, '<code>$1</code>');
   }
- 
+
   while (i < lines.length) {
     const line = lines[i];
- 
+
     // Fenced code block
     if (line.startsWith('```')) {
       let code = '';
@@ -759,18 +790,18 @@ function renderPreview(md) {
       i++;
       continue;
     }
- 
+
     // Headings
     if (/^### (.+)/.test(line)) { html += `<h3>${inlineFormat(line.slice(4))}</h3>`; i++; continue; }
     if (/^## (.+)/.test(line))  { html += `<h2>${inlineFormat(line.slice(3))}</h2>`; i++; continue; }
     if (/^# (.+)/.test(line))   { html += `<h1>${inlineFormat(line.slice(2))}</h1>`; i++; continue; }
- 
+
     // HR
     if (/^---+$/.test(line.trim())) { html += '<hr/>'; i++; continue; }
- 
+
     // Blockquote
     if (line.startsWith('> ')) { html += `<blockquote>${inlineFormat(line.slice(2))}</blockquote>`; i++; continue; }
- 
+
     // Ordered list
     if (/^\d+\. /.test(line)) {
       html += '<ol>';
@@ -781,7 +812,7 @@ function renderPreview(md) {
       html += '</ol>';
       continue;
     }
- 
+
     // Unordered list
     if (/^[-*] /.test(line)) {
       html += '<ul>';
@@ -792,10 +823,10 @@ function renderPreview(md) {
       html += '</ul>';
       continue;
     }
- 
+
     // Blank line
     if (line.trim() === '') { i++; continue; }
- 
+
     // Paragraph
     let para = '';
     while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !lines[i].startsWith('```') && !/^[-*] /.test(lines[i]) && !/^\d+\. /.test(lines[i]) && !/^---/.test(lines[i]) && !lines[i].startsWith('> ')) {
@@ -804,10 +835,10 @@ function renderPreview(md) {
     }
     if (para) html += `<p>${inlineFormat(para)}</p>`;
   }
- 
+
   document.getElementById('markdown-preview').innerHTML = html;
 }
- 
+
 /* ─────────────────────────── Tab switching ─────────────────────────── */
 let currentTab = 'preview';
 function switchTab(tab) {
@@ -817,9 +848,9 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-btn')[tab === 'preview' ? 0 : 1].classList.add('active');
 }
- 
+
 /* ─────────────────────────── Copy / Download ─────────────────────────── */
- 
+
 async function copyMarkdown() {
   try {
     await navigator.clipboard.writeText(currentMarkdown);
@@ -829,7 +860,7 @@ async function copyMarkdown() {
     setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Markdown'; btn.classList.remove('copied'); }, 2000);
   } catch { alert('Could not copy. Please use the Markdown tab to copy manually.'); }
 }
- 
+
 function downloadMarkdown() {
   const blob = new Blob([currentMarkdown], { type: 'text/markdown' });
   const a = document.createElement('a');
@@ -837,11 +868,11 @@ function downloadMarkdown() {
   a.download = 'README.md';
   a.click();
 }
- 
+
 /* ─────────────────────────── Auto-generate on input ─────────────────────────── */
 document.getElementById('editor').addEventListener('input', generate);
 document.getElementById('editor').addEventListener('change', generate);
- 
+
 // Initial render
 generate();
 </script>
